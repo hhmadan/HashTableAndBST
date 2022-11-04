@@ -28,10 +28,11 @@ public class HashTableClass {
         }
         public void getHashTable(String string, HashTableClass hT){
             int timesVisited = -1;
-            int freq = 1;
+            int freq;
             String[] storeWords = string.toLowerCase().split(" ");
             int[]count = new int[storeWords.length];
             for(int i =0; i< storeWords.length; i++){
+                freq =1;
                 for (int j = i + 1; j < count.length; j++){
                     if (storeWords[i].equals(storeWords[j]))
                     {
