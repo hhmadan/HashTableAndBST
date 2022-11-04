@@ -22,6 +22,6 @@ public class BinarySearchTreeClass {
         System.out.println("Binary Search Tree Traversal");
         bs.traversal(bs.root);
         bs.getSize();
-
+        bs.getNode(bs.root, 63);
     }
 }

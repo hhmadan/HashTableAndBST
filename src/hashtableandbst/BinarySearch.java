@@ -55,6 +55,18 @@ public class BinarySearch<T extends Comparable<T>> {
         }
         System.out.println("\nSize of this BST is: "+size);
     }
+    public void getNode(Node<T> newNode, int val){
+        if(newNode == null){
+            System.out.println(val+" is NOT PRESENT in Binary Search Tree");
+        } else if(newNode.data == val){
+            System.out.println(val+" is PRESENT in Binary Search Tree");
+        } else if (val > newNode.data) {
+            getNode(newNode.right, val);
+        } else if (val < newNode.data) {
+            getNode(newNode.left, val);
+        }
+
+    }
     public void traversal(Node<T> root)
     {
         if(root != null)
