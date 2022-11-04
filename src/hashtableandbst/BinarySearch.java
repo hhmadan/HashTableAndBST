@@ -2,6 +2,7 @@ package hashtableandbst;
 
 public class BinarySearch<T extends Comparable<T>> {
     Node<T> root;
+    int size = 0;
     public class Node<T extends Comparable<T>>{
         int data;
         Node<T>left;
@@ -16,6 +17,7 @@ public class BinarySearch<T extends Comparable<T>> {
         if (root == null)
         {
             root = newNode;
+            size++;
         }
         else
         {
@@ -30,6 +32,7 @@ public class BinarySearch<T extends Comparable<T>> {
                     if (current == null)
                     {
                         parent.left = newNode;
+                        size++;
                         return;
                     }
                 }
@@ -39,11 +42,18 @@ public class BinarySearch<T extends Comparable<T>> {
                     if (current == null)
                     {
                         parent.right = newNode;
+                        size++;
                         break;
                     }
                 }
             }
         }
+    }
+    public void getSize(){
+        if(root == null){
+            System.out.println("Binary Search is Empty");
+        }
+        System.out.println("\nSize of this BST is: "+size);
     }
     public void traversal(Node<T> root)
     {

@@ -8,8 +8,20 @@ public class BinarySearchTreeClass {
         bs.add(56);
         bs.add(30);
         bs.add(70);
+        bs.add(22);
+        bs.add(40);
+        bs.add(60);
+        bs.add(95);
+        bs.add(11);
+        bs.add(65);
+        bs.add(3);
+        bs.add(16);
+        bs.add(63);
+        bs.add(67);
 
         System.out.println("Binary Search Tree Traversal");
         bs.traversal(bs.root);
+        bs.getSize();
+
     }
 }
