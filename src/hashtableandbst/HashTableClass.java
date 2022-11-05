@@ -54,21 +54,37 @@ public class HashTableClass {
         public void displayHT(){
             MyMapNode current = head;
             if (head == null) {
-                System.out.println("HashTable is empty");
+                 System.out.println("HashTable is empty");
             }
             else{
-                System.out.println("Frequency of Words in given Statement");
+                System.out.println("Frequency of Words in given Paragraph:\nParanoids are not paranoid because they are " +
+                        "paranoid but because they\n keep putting themselves deliberately into paranoid avoidable situations");
                 while (current != null) {
                     System.out.println(current.key + "==>" + current.value);
                     current = current.next;
                 }
             }
         }
+    void delNode(String data) {
+        MyMapNode tmp = head, preData = null;
 
-    public static void main(String[] args) {
+        while (tmp != null && !tmp.key.equalsIgnoreCase(data)) {
+            preData = tmp;
+            tmp = tmp.next;
+        }
+        if (tmp == null){
+            System.out.println("Data Not Found..");
+        }
+        preData.next = tmp.next;
+    }
+        public static void main(String[] args) {
         HashTableClass hTable = new HashTableClass();
-        String statement = "To be or not to be";
+        String statement = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves" +
+                " deliberately into paranoid avoidable situations";
         hTable.getHashTable(statement,hTable);
+        hTable.displayHT();
+
+        hTable.delNode("avoidable");
         hTable.displayHT();
     }
 }
